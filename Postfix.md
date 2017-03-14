@@ -1,9 +1,12 @@
 # Postfix
 ## Configuration files
-### /etc/postfix/generic
-This does rewrites of the *From* headers on _outbound_ messages so that it can
-be replied to if necessary (it also makes it appear more legitimate, and may
-even be used to correctly identify which host is sending the message).
+The `/etc/postfix/generic` file rewrites the *From* headers on _outbound_ messages so that it can
+be replied to if necessary. It also makes it appear more legitimate, and may
+even be used to correctly identify which host is sending the message.
+
+The `/etc/postfix/aliases` file defines aliases that are resolved so that mail
+that would usually go only to root will now actually be forwarded on to an
+actual email address.
 
 ```
 # Ensure mail uses a legitimate 'From' address.
