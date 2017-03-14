@@ -1,6 +1,6 @@
-#Postfix
-##Configuration files
-###/etc/postfix/generic
+# Postfix
+## Configuration files
+### /etc/postfix/generic
 This does rewrites of the *From* headers on _outbound_ messages so that it can
 be replied to if necessary (it also makes it appear more legitimate, and may
 even be used to correctly identify which host is sending the message).
@@ -12,7 +12,7 @@ even be used to correctly identify which host is sending the message).
 postmap /etc/postfix/generic
 ```
 
-##Installing Postfix with SASL support
+## Installing Postfix with SASL support
 ```
 sudo apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
 ```
@@ -43,7 +43,7 @@ chmod 0600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
 postfix reload && tail -fn50 /var/log/mail.log
 ```
 
-##Test that it works
+## Test that it works
 
 Once setup, you should test to ensure that all works as intended
 ```
