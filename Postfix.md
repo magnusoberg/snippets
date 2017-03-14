@@ -15,13 +15,16 @@ postmap /etc/postfix/generic
 sudo apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
 ```
 If Postfix is installed for the first time, select _Internet Site_ when asked.
-`vim /etc/postfix/main.cf`
+
+Then add the following lines to `/etc/postfix/main.cf`
 ```
+# STARTTLS options
+smtp_tls_CAfile = /etc/postfix/cacert.pem
+
+# SASL Settings
 relayhost = [smtp.gmail.com]:587
 smtp_sasl_auth_enable = yes
 smtp_sasl_password_maps = hash:/etc/postfix/sasl_passwd
 smtp_sasl_security_options = noanonymous
-smtp_tls_CAfile = /etc/postfix/cacert.pem
-smtp_use_tls = yes
 ```
 
