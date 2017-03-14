@@ -10,10 +10,9 @@ even be used to correctly identify which host is sending the message).
 
 postmap /etc/postfix/generic
 ```
-##Installin Postfix with SASL support
+##Installing Postfix with SASL support
 ```
-sudo apt-get install postfix mailutils libsasl2-2 ca-certificates
-libsasl2-modules
+sudo apt-get install postfix mailutils libsasl2-2 ca-certificates libsasl2-modules
 ```
 If Postfix is installed for the first time, select _Internet Site_ when asked.
 `vim /etc/postfix/main.cf`
