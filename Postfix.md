@@ -41,6 +41,7 @@ chown root:root /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
 chmod 0600 /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
 postfix reload && tail -fn50 /var/log/mail.log
 ```
+
 ##Test that it works
 Once setup, you should test to ensure that all works as intended
 ```
