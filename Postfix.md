@@ -44,7 +44,8 @@ Add username and password to the SASL file `/etc/postfix/sasl_passwd`
 ```
 [smtp.gmail.com]:587    username@gmail.com:PASSWORD
 ```
-
+After this, ensure to hash the `sasl_passwd` file and secure it so that only
+root can read it's contents.
 ```
 postmap /etc/postfix/sasl_passwd
 chown root:root /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
