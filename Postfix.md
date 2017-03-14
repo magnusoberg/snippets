@@ -6,10 +6,16 @@ be replied to if necessary (it also makes it appear more legitimate, and may
 even be used to correctly identify which host is sending the message).
 
 ```
+# Ensure mail uses a legitimate 'From' address.
 /etc/postfix/generic:
     root@localhost.local    mywebserver@mydomain.com
 
+# Ensure mail to root is seen by someone.
+/etc/postfix/aliases:
+    root:   myself@example.com
+
 postmap /etc/postfix/generic
+postmap /etc/postfix/aliases
 ```
 
 ## Installing Postfix with SASL support
