@@ -55,4 +55,6 @@ Once setup, you should test to ensure that all works as intended
 ```
 echo "Test mail from postfix" | mail -s "Test Postfix" you@example.com
 ```
-
+You should now receive an authenticated (authorized) email from the username
+defined in `sasl_passwd` file. Check the logs in `/var/log/mail.log` for more
+details.
