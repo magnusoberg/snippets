@@ -35,6 +35,7 @@ Add username and password to the SASL file `/etc/postfix/sasl_passwd`
 ```
 [smtp.gmail.com]:587    username@gmail.com:PASSWORD
 ```
+
 ```
 postmap /etc/postfix/sasl_passwd
 chown root:root /etc/postfix/sasl_passwd /etc/postfix/sasl_passwd.db
@@ -43,6 +44,7 @@ postfix reload && tail -fn50 /var/log/mail.log
 ```
 
 ##Test that it works
+
 Once setup, you should test to ensure that all works as intended
 ```
 echo "Test mail from postfix" | mail -s "Test Postfix" you@example.com
