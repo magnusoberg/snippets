@@ -50,4 +50,3 @@ Once setup, you should test to ensure that all works as intended
 echo "Test mail from postfix" | mail -s "Test Postfix" you@example.com
 ```
 
-
