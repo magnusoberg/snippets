@@ -8,11 +8,11 @@ even be used to correctly identify which host is sending the message).
 ```
 # Ensure mail uses a legitimate 'From' address.
 /etc/postfix/generic:
-    root@localhost.local    mywebserver@mydomain.com
+root@localhost.local    mywebserver@mydomain.com
 
 # Ensure mail to root is seen by someone.
 /etc/postfix/aliases:
-    root:   myself@example.com
+root:   myself@example.com
 
 postmap /etc/postfix/generic
 postmap /etc/postfix/aliases
