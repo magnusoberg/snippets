@@ -15,7 +15,7 @@ that comes with some nice defaults. All service accept passive commands by
 default. This can be verified by checking `enable_passive_checks`
 
 The special socket file `/var/run/icinga2/cmd/icinga2.cmd` can be sent output in
-below format:
+below format: [icinga source](https://docs.icinga.com/latest/en/passivechecks.html)
 ```
  [<timestamp>] PROCESS_SERVICE_CHECK_RESULT;<host_name>;<svc_description>;<return_code>;<plugin_output>
 ```
