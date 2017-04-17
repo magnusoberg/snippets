@@ -15,10 +15,18 @@ that comes with some nice defaults. All service accept passive commands by
 default. This can be verified by checking `enable_passive_checks`
 
 The special socket file `/var/run/icinga2/cmd/icinga2.cmd` can be sent output in
-below format: [icinga source](https://docs.icinga.com/latest/en/passivechecks.html)
+below format: [icinga source](https://docs.icinga.com/latest/en/passivechecks.html#servicecheckresults)
 ```
  [<timestamp>] PROCESS_SERVICE_CHECK_RESULT;<host_name>;<svc_description>;<return_code>;<plugin_output>
 ```
+where...
+
+* __timestamp__ is the time in time_t format (seconds since the UNIX epoch) that the service check was perfomed (or submitted). Please note the single space after the right bracket.
+* __host_name__ is the short name of the host associated with the service in the service definition
+* __svc_description__ is the description of the service as specified in the service definition
+* __return_code__ is the return code of the check (0=OK, 1=WARNING, 2=CRITICAL, 3=UNKNOWN)
+* __plugin_output__ is the text output of the service check (i.e. the plugin output)
+
 In other words:
 ```
 printf "[$(date +%s)] PROCESS_SERVICE_CHECK_RESULT;Test VM;passive-test;0;This is the Plugin output|dewpoint=21.5\n" >> /var/run/icinga2/cmd/icinga2.cmd
