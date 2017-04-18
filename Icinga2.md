@@ -39,3 +39,17 @@ In other words:
 printf "[$(date +%s)] PROCESS_SERVICE_CHECK_RESULT;Test VM;passive-test;0;This is the Plugin output|dewpoint=21.5\n" >> /var/run/icinga2/cmd/icinga2.cmd
 ```
 should do the trick.
+
+## Thoughts
+* Try to avoid using hyphens in service names and in particular custom command
+  names. The check_command name is used by InfluxDb as the measurement name, and
+hyphens need special quoting. Underscores are better for this as they do not
+require quoting in InfluxDb.
+* Be aware that check_command is used by default as the measurement name in
+  InfluxDb. This is controlled by the InfluxDb template in Icinga, and so can be
+changed. But different metrics using the same command; for example `snmp` will
+have all the metrics in the same "snmp" measurement table. This may not be
+ideal. I have been thinking about changing the template to the service name
+instead, but we also have to consider the benefits of multiple values in fewer
+tables as a good thing performance-wise instead of multiple tables with only few
+values in each table.
