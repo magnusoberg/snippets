@@ -22,11 +22,17 @@ below format: [icinga source](https://docs.icinga.com/latest/en/passivechecks.ht
 ```
 where...
 
-* __timestamp__ is the time in time_t format (seconds since the UNIX epoch) that the service check was perfomed (or submitted). Please note the single space after the right bracket.
-* __host_name__ is the short name of the host associated with the service in the service definition
-* __svc_description__ is the description of the service as specified in the service definition
-* __return_code__ is the return code of the check (0=OK, 1=WARNING, 2=CRITICAL, 3=UNKNOWN)
-* __plugin_output__ is the text output of the service check (i.e. the plugin output)
+* __timestamp__ is the time in time_t format (seconds since the UNIX epoch)
+  that the service check was perfomed (or submitted). Please note the single
+space after the right bracket.
+* __host_name__ is the short name of the host associated with the service in
+  the service definition
+* __svc_description__ is the description of the service as specified in the
+  service definition
+* __return_code__ is the return code of the check (0=OK, 1=WARNING, 2=CRITICAL,
+  3=UNKNOWN)
+* __plugin_output__ is the text output of the service check (i.e. the plugin
+  output)
 
 In other words:
 ```
